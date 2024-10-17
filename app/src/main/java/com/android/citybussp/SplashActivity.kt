@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.citybussp.databinding.ActivitySplashBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
     private var _binding: ActivitySplashBinding? = null
@@ -34,15 +36,13 @@ class SplashActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
             callNewActivity()
-            startActivity(intent)
-            finish()
         }
     }
 
     private fun callNewActivity() {
         Intent(this, MainActivity::class.java).apply {
             startActivity(this)
-            finish()
+            this@SplashActivity.finish()
         }
     }
 
