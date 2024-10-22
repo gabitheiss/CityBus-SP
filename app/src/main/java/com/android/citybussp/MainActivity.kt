@@ -19,4 +19,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         window.statusBarColor = ContextCompat.getColor(this, R.color.blue_pattern)
     }
+
 }
