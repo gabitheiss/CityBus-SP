@@ -14,11 +14,9 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragmentWithAnimation(MapFragment.newInstance(), R.id.containerView, true)
         window.statusBarColor = ContextCompat.getColor(this, R.color.blue_pattern)
     }
 }
